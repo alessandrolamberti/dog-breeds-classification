@@ -21,10 +21,10 @@ def get_pred_label(prediction_probabilities, unique_breeds):
     return unique_breeds[np.argmax(prediction_probabilities)]
 
 def make_prediction(img):
-    labels_csv = pd.read_csv("labels/labels.csv")
+    labels_csv = pd.read_csv("app/labels/labels.csv")
     labels = labels_csv["breed"].to_numpy()
     breeds = np.unique(labels)
-    model = tf.keras.models.load_model("model/dog_vision.h5",
+    model = tf.keras.models.load_model("app/model/dog_vision.h5",
                                      custom_objects={"KerasLayer":hub.KerasLayer}) # Telling we have a custom piece too
 
     data = process(img)

@@ -7,7 +7,7 @@ st.markdown(
     f"""
     <style>
     .reportview-container {{
-        background: url(data:image/.jpg;base64,{base64.b64encode(open('images/bg.jpg', "rb").read()).decode()})
+        background: url(data:image/.jpg;base64,{base64.b64encode(open('app/images/bg.jpg', "rb").read()).decode()})
     }}
     </style>
     """,
